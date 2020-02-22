@@ -1,0 +1,131 @@
+<h3>
+  new Product ADD /// Reactive
+</h3>
+
+<form [formGroup]="productAddForm" (ngSubmit)="add()" class="form-group">
+  <div>
+    <input
+      type="text"
+      id="manufacturer"
+      name="manufacturer"
+      formControlName="manufacturer"
+      class="form-control"
+      placeholder="Manufacturer"
+    />
+    <div
+      class="alert alert-danger"
+      *ngIf="
+        productAddForm.get('manufacturer').hasError('required') &&
+        productAddForm.get('manufacturer').dirty
+      "
+    >
+      Manufacturer Name is required
+    </div>
+  </div>
+  <div>
+    <input
+      type="text"
+      id="model"
+      name="model"
+      formControlName="model"
+      class="form-control"
+      placeholder="Model"
+    />
+    <div
+      class="alert alert-danger"
+      *ngIf="
+        productAddForm.get('model').hasError('required') &&
+        productAddForm.get('model').dirty
+      "
+    >
+      Model Name is required
+    </div>
+  </div>
+  <div>
+    <input
+      type="text"
+      id="year"
+      name="year"
+      formControlName="year"
+      class="form-control"
+      placeholder="year"
+    />
+    <div
+      class="alert alert-danger"
+      *ngIf="
+        productAddForm.get('year').hasError('required') &&
+        productAddForm.get('year').dirty
+      "
+    >
+      Year Name is required
+    </div>
+  </div>
+  <div>
+    <input
+      type="text"
+      id="description"
+      name="description"
+      formControlName="description"
+      class="form-control"
+      placeholder="description"
+    />
+    <div
+      class="alert alert-danger"
+      *ngIf="
+        productAddForm.get('description').hasError('required') &&
+        productAddForm.get('description').dirty
+      "
+    >
+      Description Name is required
+    </div>
+  </div>
+  <div>
+    <input
+      type="text"
+      id="price"
+      name="price"
+      formControlName="price"
+      class="form-control"
+      placeholder="price"
+    />
+    <div
+      class="alert alert-danger"
+      *ngIf="
+        productAddForm.get('price').hasError('required') &&
+        productAddForm.get('price').dirty
+      "
+    >
+      Price Name is required
+    </div>
+  </div>
+  <div>
+    <input
+      type="text"
+      id="imgUrl"
+      name="imgUrl"
+      formControlName="imgUrl"
+      class="form-control"
+      placeholder="imgUrl"
+    />
+    <div
+      class="alert alert-danger"
+      *ngIf="
+        productAddForm.get('imgUrl').hasError('required') &&
+        productAddForm.get('imgUrl').dirty
+      "
+    >
+      Image Name is required
+    </div>
+  </div>
+  <div class="form-group">
+    <select class="form-control" formControlName="categoryId" name="categoryId" id="categoryId" required>
+        <option *ngFor="let category of categories" [value]="category.id" >{{category.name}}
+        </option>
+    </select>
+    <div class="alert alert-danger" *ngIf="productAddForm.get('categoryId').hasError('required') &&
+    productAddForm.get('categoryId').touched">
+        Category is required
+    </div>
+  </div>
+  <button type="submit" class="btn btn-success" [disabled]="productAddForm.invalid">Add-product</button>
+</form>

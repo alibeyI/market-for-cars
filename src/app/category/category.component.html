@@ -1,0 +1,16 @@
+
+
+      <nav class="mt-3">
+        <div>
+          <ul class="nav flex-column" *ngFor="let category of categories">
+            <li class="nav-item bo">
+              <a class="nav-link active" routerLink="products/category/{{category.id}}">
+                <span data-feather="home"></span>
+                {{category.name}}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    
+      

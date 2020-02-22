@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="nav-scroller py-1 mt-2">
+    <nav class="nav d-flex justify-content-between">
+      <a class="p-2 text-muted" href="#">World</a>
+      <a class="p-2 text-muted" href="#">U.S.</a>
+      <a class="p-2 text-muted" routerLink="/products-add-1">product add/classic form</a>
+      <a class="p-2 text-muted" routerLink="/products-add-2">product add/reactive form</a>
+      <button class="bo">
+        <a *ngIf="isLoggedin()==false" class="p-2 text-muted" >Log-In</a>
+        <a *ngIf="isLoggedin()==true" (click)="logOut()" class="p-2 text-muted" >Log-Out</a>
+        </button>
+    </nav>
+  </div>
+</div>

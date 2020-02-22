@@ -1,0 +1,38 @@
+<div  class="form-group col-md-12 mt-3">
+  <input
+    type="email"
+    class="form-control"
+    id="exampleFormControlInput1"
+    placeholder="search"
+    [(ngModel)]="args"
+  />
+  <small *ngIf="args" class="form-text text-muted">
+    Now you searching -> <strong>{{args}}</strong>
+  </small>
+</div>
+
+<div class="row">
+  <ng-template #noProducts>
+    <div class="alert alert-warning" role="alert">
+      A simple warning alert—check it out!
+    </div>
+  </ng-template>
+
+  <div
+    *ngFor="let product of products | productFilter: args"
+    class="card"
+    style="width: 18rem;"
+  >
+    <img [src]="product.imgUrl" class="card-img-top" alt="Photo" />
+    <div class="card-body">
+      <h5 class="card-title">
+        {{ product.manufacturer }} {{ product.model }} {{ product.year }}
+        {{ product.price | currency }}
+      </h5>
+      <p class="card-text">
+        {{ product.desc }}
+      </p>
+      <button (click)="addtoCart(product)" class="buy">Buy</button>
+    </div>
+  </div>
+</div>

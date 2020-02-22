@@ -1,0 +1,107 @@
+<h3>New Product add</h3>
+
+<form #productAddForm="ngForm" (ngSubmit)="add(productAddForm)">
+  <div class="form-group">
+    <input
+      type="text"
+      placeholder="Manufacturer"
+      #manufacturer="ngModel"
+      [(ngModel)]="modell.manufacturer"
+      class="form-control"
+      name="manufacturer"
+      id="manufacturer"
+      required
+    />
+    <div class="alert alert-danger" *ngIf="manufacturer.invalid && manufacturer.dirty">
+      Product manufacturer is required
+    </div>
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      placeholder="Model"
+      #model="ngModel"
+      [(ngModel)]="modell.model"
+      class="form-control"
+      name="model"
+      id="model"
+      required
+    />
+    <div class="alert alert-danger" *ngIf="model.invalid && model.dirty">
+      Product model is required
+    </div>
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      placeholder="year"
+      #year="ngModel"
+      [(ngModel)]="modell.year"
+      class="form-control"
+      name="year"
+      id="year"
+      required
+    />
+    <div class="alert alert-danger" *ngIf="year.invalid && year.dirty">
+      Product year is required
+    </div>
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      placeholder="description"
+      #description="ngModel"
+      [(ngModel)]="modell.description"
+      class="form-control"
+      name="description"
+      id="description"
+      required
+    />
+    <div
+      class="alert alert-danger"
+      *ngIf="description.invalid && description.dirty"
+    >
+      Product Description is required
+    </div>
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      placeholder="product Img"
+      #imgUrl="ngModel"
+      [(ngModel)]="modell.imgUrl"
+      class="form-control"
+      name="imgUrl"
+      id="imgUrl"
+      required
+    />
+    <div class="alert alert-danger" *ngIf="imgUrl.invalid && imgUrl.dirty">
+      Img Url is required
+    </div>
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      placeholder="product Price"
+      #price="ngModel"
+      [(ngModel)]="modell.price"
+      class="form-control"
+      name="price"
+      id="price"
+      required
+    />
+    <div class="alert alert-danger" *ngIf="price.invalid && price.dirty">
+        Price is required
+    </div>
+  </div>
+  <div class="form-group">
+    <select class="form-control" #categoryId="ngModel" [(ngModel)]="modell.categoryId" name="categoryId" id="categoryId" required>
+        <option *ngFor="let category of categories" [value]="category.id" >{{category.name}}
+        </option>
+    </select>
+    <div class="alert alert-danger" *ngIf="categoryId.invalid && categoryId.touched">
+        Category is required
+    </div>
+  </div>
+  <button type="submit" class="btn btn-success" [disabled]="productAddForm.invalid">Add-product</button>
+</form>

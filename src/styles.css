@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+/* @import "~alertifyjs/build/css/alertify.min.js";
+@import "~alertifyjs/build/css/themes/bootstrap.min.css"; */
+body{
+    background-color: rgb(223, 223, 223);
+}

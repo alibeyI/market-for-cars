@@ -1,0 +1,18 @@
+.buy{
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    
+    background-color: white;
+    border-style: hidden;
+    outline: none;
+}
+
+.card-body{
+    background-color: #d5d5d5;
+}
+.buy:hover{
+    box-shadow: -3px -3px 7px white, 3px 3px 4px black;
+    transition: ease-out;
+    transition: .8s;
+}

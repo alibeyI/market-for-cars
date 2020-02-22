@@ -1,0 +1,10 @@
+.bo{
+    border-radius: 10px;
+    border-style: none;
+    background-color: white;
+}
+.bo:hover{
+    box-shadow: -3px -3px 7px white, 3px 3px 4px black;
+    transition: ease-out;
+    transition: .8s;
+}
